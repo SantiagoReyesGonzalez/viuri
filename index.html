@@ -1,12 +1,183 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proyecto de Ingeniería de Software 2 en la Universidad CUN: creación de una tienda online para Viuri, empresa ficticia de productos de belleza femenina ">
-    <title>Viuri</title>
+    <title>Viuri: Tan natural como tu belleza</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Fase inicial de Viuri</h1>
+  <nav>
+    <img src="./icons/icon_menu.svg" alt="menu" class="menu">
+
+    <div class="navbar-left">
+      <img src="./logos/logo_viuri_morado.svg" alt="logo" class="logo">
+
+      <ul>
+        <li>
+          <a href="/">Accesorios</a>
+        </li>
+        <li>
+          <a href="/">Esenciales</a>
+        </li>
+        <li>
+          <a href="/">Tratamientos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-right">
+      <ul>
+        <li class="navbar-email">pepita@viuri.com</li>
+        <li class="navbar-shopping-cart">
+          <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
+          <div>2</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="desktop-menu inactive">
+        <ul>
+          <li>
+            <a href="/" class="title">Mis ordenes</a>
+          </li>
+    
+          <li>
+            <a href="/">Mi cuenta</a>
+          </li>
+    
+          <li>
+            <a href="/">Salir</a>
+          </li>
+        </ul>
+    </div>
+
+    <div class="mobile-menu inactive">
+        <ul>
+          <li>
+            <a href="/">CATEGORIAS</a>
+          </li>
+          <li>
+            <a href="/">Accesorios</a>
+          </li>
+          <li>
+            <a href="/">Esenciales</a>
+          </li>
+          <li>
+            <a href="/">Tratamientos</a>
+          </li>
+          
+        </ul>
+    
+        <ul>
+          <li>
+            <a href="/">Mis ordenes</a>
+          </li>
+          <li>
+            <a href="/">Mi cuenta</a>
+          </li>
+        </ul>
+    
+        <ul>
+          <li>
+            <a href="/" class="email">prueba@viuri.com</a>
+          </li>
+          <li>
+            <a href="/" class="sign-out">Salir</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+  <aside id="shoppingCartContainer" class=" inactive">
+    <div class="title-container">
+      <img src="./icons/flechita.svg" alt="arrow">
+      <p class="title">Mis ordenes</p>
+    </div>
+
+    <div class="my-order-content">
+      <div class="shopping-cart">
+        <figure>
+          <img src="https://media.istockphoto.com/id/1268627161/es/vector/vector-face-cosmetic-makeup-powder-en-negro-redondo-caja-de-pl%C3%A1stico-con-espejo-y-aplicador.jpg?s=2048x2048&w=is&k=20&c=x36nbx0C-ex71PcLkyHNTajcwMeuVj6dBJAJZBRsUXY=" alt="maquillaje">
+        </figure>
+        <p>maquillaje</p>
+        <p>$30,00</p>
+        <img src="./icons/icon_close.png" alt="close">
+      </div>
+
+      <div class="shopping-cart">
+        <figure>
+          <img src="https://media.istockphoto.com/id/1336084356/es/foto/lay-plana-de-suero-de-cosm%C3%A9ticos-y-cristaler%C3%ADa-de-laboratorio-con-hojas-frescas-de-aloe-vera.jpg?s=2048x2048&w=is&k=20&c=oVdRhSx-w6hCHde2lxCin2HyBC_bS1j9EokHog4har4=" alt="maquillaje">
+        </figure>
+        <p>maquillaje</p>
+        <p>$30,00</p>
+        <img src="./icons/icon_close.png" alt="close">
+      </div>
+
+      <div class="shopping-cart">
+        <figure>
+          <img src="https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=" alt="maquillaje">
+        </figure>
+        <p>maquillaje</p>
+        <p>$30,00</p>
+        <img src="./icons/icon_close.png" alt="close">
+      </div>
+
+      <div class="order">
+        <p>
+          <span>Total</span>
+        </p>
+        <p>$560.00</p>
+      </div>
+
+      <button class="primary-button">
+        Comprar
+      </button>
+    </div>
+  </div>
+  </aside>
+
+  <aside id="productDetail" class="inactive">
+    <div class="product-detail-close">
+      <img src="./icons/icon_close.png" alt="close">
+    </div>
+    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+    <div class="product-info">
+      <p>$35,00</p>
+      <p>Bike</p>
+      <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
+      <button class="primary-button add-to-cart-button">
+        <img src="./icons/bt_add_to_cart.svg" alt="add to cart">
+        Add to cart
+      </button>
+    </div>
+  </aside>
+
+  <aside class="prueba">
+
+  </aside>
+
+  <section class="main-container">
+    <div class="cards-container">
+
+<!--       <div class="product-card">
+        <img src="https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=" alt="maquillaje">
+        <div class="product-info">
+          <div>
+            <p>$120,00</p>
+            <p>maquillaje</p>
+          </div>
+          <figure>
+            <img src="./icons/bt_add_to_cart.svg" alt="">
+          </figure>
+        </div>
+      </div> -->
+      
+    </div>
+  </section>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
