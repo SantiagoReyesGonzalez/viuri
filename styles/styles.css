@@ -74,6 +74,11 @@
   .navbar-shopping-cart {
     position: relative;
   }
+
+  .navbar-shopping-cart:hover {
+    cursor: pointer;
+  }
+
   .navbar-shopping-cart div {
     width: 20px;
     height: 20px;
@@ -286,6 +291,11 @@ aside {
     border-radius: 20px;
     object-fit: cover;
   }
+
+  .product-card img:hover {
+    cursor: pointer;
+  }
+
   .product-card .product-info {
     display: flex;
     justify-content: space-between;
