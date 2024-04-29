@@ -2,7 +2,7 @@
     --white: #FFFFFF;
     --black: #000000;
     --violet-light: #b12a86;
-    --violet-light-hover: #8d236b;
+    --violet-light-hover: #af5292;
     --violet: #421032;
     --very-light-pink: #C7C7C7;
     --text-input-field: #F7F7F7;
@@ -75,20 +75,20 @@
     position: relative;
   }
   .navbar-shopping-cart div {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     color: var(--white);
     background-color: var(--violet-light);
     border-radius: 50%;
     font-size: var(--sm);
     font-weight: bold;
     position: absolute;
-    top: -6px;
-    right: -3px;
+    top: -12px;
+    right: -10px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
   .desktop-menu {
     position: absolute;
@@ -175,15 +175,21 @@ aside {
   box-sizing: border-box;
   position: absolute;
   right: 0;
+  border-width: 0px 0px 0px 4px;
+  border-style: solid;
+  border-color: white;
 }
 
 /* ShoppingCart */
 
-#shoppingCartContainer{
-    padding: 0 24px;
+#shoppingCartContainer {
+  padding: 24px;
+  border-radius: 20px;
 }
 
-
+.back-shopping-cart-container:hover{
+  cursor: pointer;
+}
 .title-container {
   display: flex;
 }
@@ -366,6 +372,16 @@ aside {
     align-items: center;
     justify-content: center;
   }
+
+/* Estilos para el boton de carrito de compra */
+
+.add-to-cart:hover{
+  /* background-color: var(--violet-light);
+  border-radius: 12px; */
+  box-shadow: 0 0px 12px rgba(247, 121, 226, 0.911);
+
+  border-radius: 60px;
+}
 
   @media (max-width: 640px) {
     .menu {

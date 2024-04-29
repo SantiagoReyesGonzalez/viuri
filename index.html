@@ -35,7 +35,7 @@
         <li class="navbar-email">pepita@viuri.com</li>
         <li class="navbar-shopping-cart">
           <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
-          <div>2</div>
+          <div id="CartItemCountIndicator">0</div>
         </li>
       </ul>
     </div>
@@ -92,45 +92,26 @@
         </ul>
     </div>
   </nav>
+
+
   <aside id="shoppingCartContainer" class=" inactive">
+
     <div class="title-container">
-      <img src="./icons/flechita.svg" alt="arrow">
+      <img src="./icons/flechita.svg" alt="arrow" class="back-shopping-cart-container">
       <p class="title">Mis ordenes</p>
     </div>
 
     <div class="my-order-content">
-      <div class="shopping-cart">
-        <figure>
-          <img src="https://media.istockphoto.com/id/1268627161/es/vector/vector-face-cosmetic-makeup-powder-en-negro-redondo-caja-de-pl%C3%A1stico-con-espejo-y-aplicador.jpg?s=2048x2048&w=is&k=20&c=x36nbx0C-ex71PcLkyHNTajcwMeuVj6dBJAJZBRsUXY=" alt="maquillaje">
-        </figure>
-        <p>maquillaje</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
-      </div>
+      
+      <div class="my-order-content-cart">
 
-      <div class="shopping-cart">
-        <figure>
-          <img src="https://media.istockphoto.com/id/1336084356/es/foto/lay-plana-de-suero-de-cosm%C3%A9ticos-y-cristaler%C3%ADa-de-laboratorio-con-hojas-frescas-de-aloe-vera.jpg?s=2048x2048&w=is&k=20&c=oVdRhSx-w6hCHde2lxCin2HyBC_bS1j9EokHog4har4=" alt="maquillaje">
-        </figure>
-        <p>maquillaje</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
       </div>
-
-      <div class="shopping-cart">
-        <figure>
-          <img src="https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=" alt="maquillaje">
-        </figure>
-        <p>maquillaje</p>
-        <p>$30,00</p>
-        <img src="./icons/icon_close.png" alt="close">
-      </div>
-
+      
       <div class="order">
         <p>
           <span>Total</span>
         </p>
-        <p>$560.00</p>
+        <p id="totalShoppingCart">$0</p>
       </div>
 
       <button class="primary-button">
