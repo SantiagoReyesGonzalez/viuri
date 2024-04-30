@@ -33,6 +33,43 @@
     width: 60px;
     border-radius: 4px;
   }
+  .centered-menu {
+    display: flex;
+    justify-content: center;
+  }
+  .horizontal-menu {
+    list-style: none;
+    display: flex;
+	  justify-content: space-around;
+  }
+  .horizontal-menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+  }
+  .horizontal-menu > li:hover{
+    background-color: rgb(219, 176, 219);
+  }
+  .vertical-menu  {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .horizontal-menu li:hover .vertical-menu{
+    display: block;
+  }
+  .vertical-menu li:hover{
+    background-color: black;
+  }
+  
+  .vertical-menu li a{
+    display: block; 
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+  }
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
