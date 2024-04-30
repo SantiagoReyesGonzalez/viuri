@@ -70,6 +70,11 @@
     text-decoration: none;
     padding: 15px 15px 15px 20px;
   }
+  .vertical-menu img {
+    width: 100px; /* ajusta el ancho de la imagen */
+    height: auto; /* altura automática para mantener la proporción */
+    margin-right: 500px;
+  }
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
