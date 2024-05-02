@@ -93,102 +93,50 @@
     </div>
   </nav>
 
-  <nav class="centered-menu">
-		<ul class="horizontal-menu informacion-menu">
-			<li><a href="#">Ofertas</a></li>
-			<li>
-				<a href="#">Información</a>
-				<ul class="vertical-menu informacion-menu">
-					<li><a href="#" id="quienes-somos-link">Quienes Somos</a></li>
-					<li><a href="#" id="mision-link">Misión</a></li>
-					<li><a href="#" id="vision-link">Visión</a></li>
-				</ul>
-			</li>
-			<li>
-        <a href="#">Medios de Pago</a>
-        <ul class="vertical-menu informacion-menu">
-          <li> <img src="icons/bancolombia.png" alt=""> <a href="#"></a></li>
-          <li> <img src="icons/pse.png" alt=""> <a href="#"></a></li>
-          <li> <img src="icons/nequi.png" alt=""> <a href="#"></a></li>
-        </ul>
-      </li>
-		</ul>
-	</nav>
-
-  <div id="quienes-somos-info" class="informacion-info" style="display: none;">
-    <h2>Quienes Somos</h2>
-    <p>"En Viuri, nos dedicamos a ofrecer una experiencia única en el mundo de la belleza. Nos enorgullece proporcionar 
+  <div id="contenedor-informacion">
+    <div id="quienes-somos-info" class="informacion-info">
+        <h2>Quienes Somos</h2>
+        <p>"En Viuri, nos dedicamos a ofrecer una experiencia única en el mundo de la belleza. Nos enorgullece proporcionar 
         productos de alta calidad que realzan la belleza natural de cada individuo. Nuestra pasión por la innovación y el 
         cuidado personal nos impulsa a brindar soluciones efectivas que satisfacen las necesidades y deseos de nuestros clientes. 
         Con un enfoque en la excelencia y la autenticidad, nos esforzamos por ser un referente en la industria de la belleza, 
         ofreciendo productos que inspiran confianza y empoderan a nuestros clientes a sentirse y lucir lo mejor posible."</p>
-  </div>
+    </div>
 
-  <div id="mision-info" class="informacion-info" style="display: none;">
-    <h2>Nuestra Misión</h2>
-    <p>"En Viuri, nos dedicamos a proporcionar productos de belleza de alta calidad que resalten la autenticidad y la individualidad 
-        de cada persona. Nos esforzamos por inspirar confianza y empoderar a nuestros clientes para que se sientan seguros y hermosos
+    <div id="mision-info" class="informacion-info">
+        <h2>Nuestra Misión</h2>
+        <p>En Viuri, nos dedicamos a proporcionar productos de belleza de alta calidad que resalten la autenticidad y la individualidad 
+        de cada persona. Nos esforzamos por inspirar confianza y empoderar a nuestros clientes para que se sientan seguros y hermosos 
         en su propia piel. Nuestra misión es ofrecer una experiencia única en el mundo de la belleza, brindando soluciones 
-        innovadoras que satisfagan las necesidades y deseos de nuestros clientes."</p>
-  </div>
+        innovadoras que satisfagan las necesidades y deseos de nuestros clientes.</p>
+    </div>
 
-  <div id="vision-info" class="informacion-info" style="display: none;">
-    <h2>Nuestra Visión</h2>
-    <p>"Nuestra visión en Viuri es convertirnos en líderes en la industria de la belleza, siendo reconocidos por nuestra excelencia
+    <div id="vision-info" class="informacion-info">
+        <h2>Nuestra Visión</h2>
+        <p>Nuestra visión en Viuri es convertirnos en líderes en la industria de la belleza, siendo reconocidos por nuestra excelencia
         en productos y servicios. Nos esforzamos por ser una marca globalmente reconocida por nuestra pasión por la innovación, la
         calidad y el compromiso con la satisfacción del cliente. Buscamos transformar la forma en que las personas perciben y experimentan
-        la belleza, promoviendo una cultura de confianza, inclusión y autenticidad."</p>
-  </div>
+        la belleza, promoviendo una cultura de confianza, inclusión y autenticidad.</p>
+    </div>
+</div>
 
   <script>
-    function ocultarTodos() {
-    var informacionItems = document.querySelectorAll(".informacion-info");
-    informacionItems.forEach(function(item) {
-        item.style.display = "none";
+    document.addEventListener("DOMContentLoaded", function() {
+    var parrafos = document.querySelectorAll("#contenedor-informacion > div");
+    var index = 0;
+
+    function mostrarSiguienteParrafo() {
+        parrafos.forEach(function(parrafo) {
+            parrafo.style.display = "none"; // Ocultar todos los párrafos
+        });
+
+        parrafos[index].style.display = "block"; // Mostrar el siguiente párrafo
+        index = (index + 1) % parrafos.length; // Avanzar al siguiente párrafo
+    }
+
+    // Mostrar el siguiente párrafo cada 5 segundos
+    setInterval(mostrarSiguienteParrafo, 15000);
     });
-  }
-
-  // Función para mostrar el elemento seleccionado y ocultar los otros
-  function mostrarYCerrar(elemento) {
-      ocultarTodos(); // Oculta todos los elementos
-      document.getElementById(elemento).style.display = "block"; // Muestra el elemento seleccionado
-  }
-
-  document.getElementById("quienes-somos-link").addEventListener("mouseover", function() {
-      mostrarYCerrar("quienes-somos-info");
-  });
-  document.getElementById("quienes-somos-link").addEventListener("mouseout", function() {
-      ocultarTodos();
-  });
-
-  document.getElementById("mision-link").addEventListener("mouseover", function() {
-      mostrarYCerrar("mision-info");
-  });
-  document.getElementById("mision-link").addEventListener("mouseout", function() {
-      ocultarTodos();
-  });
-
-  document.getElementById("vision-link").addEventListener("mouseover", function() {
-      mostrarYCerrar("vision-info");
-  });
-  document.getElementById("vision-link").addEventListener("mouseout", function() {
-      ocultarTodos();
-  });
-
-  document.getElementById("close-quienes-somos").addEventListener("click", function(event) {
-      event.preventDefault();
-      document.getElementById("quienes-somos-info").style.display = "none";
-  });
-
-  document.getElementById("close-mision").addEventListener("click", function(event) {
-      event.preventDefault();
-      document.getElementById("mision-info").style.display = "none";
-  });
-
-  document.getElementById("close-vision").addEventListener("click", function(event) {
-      event.preventDefault();
-      document.getElementById("vision-info").style.display = "none";
-  });
   </script>
 
   <aside id="shoppingCartContainer" class=" inactive">
