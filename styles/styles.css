@@ -68,6 +68,50 @@
       width: 90%; /* Reducir el tamaño del contenedor en pantallas pequeñas */
   }
   }
+
+  .informacion-info {
+    position: relative;
+    }
+
+  .anterior-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../icons/boton_back.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    }
+
+  .siguiente-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../icons/boton_next.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    }
+
+  .anterior-btn {
+    left: 0;
+    }
+
+  .siguiente-btn {
+    right: 0;
+    }
+
+  .informacion-info p {
+    margin-left: 40px; /* Ajustar el margen izquierdo para el párrafo */
+    margin-right: 40px; /* Ajustar el margen derecho para el párrafo */
+    }    
+
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
