@@ -336,6 +336,30 @@ aside {
     padding: 12px;
     border-radius: 50%;
   }
+
+
+  .product-info-edit-title{
+    color: var(--black);
+    font-size: 22px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+    font-weight: 900;
+    text-align: center;
+  }
+  .btn-close-editor{
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+    height: 100%; /* La imagen ocupará todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+    position: absolute; /* Permite ajustar la imagen dentro del contenedor */
+    top: 0;
+    left: 0;
+  }
+
+  .btn-close-editor:hover{
+    box-shadow: 0 0px 12px rgba(247, 121, 226, 0.911);
+    border-radius: 4px;
+  }
+
   .product-detail-close:hover {
     cursor: pointer;
   }
@@ -366,6 +390,12 @@ aside {
     margin-top: 0;
     margin-bottom: 36px;
   }
+  label{
+    color: var(--very-light-pink);
+    font-size: var(--lg);
+    margin-top: 12px;
+    margin-left: 24px;
+  }
 /*   .primary-button {
     background-color: var(--hospital-green);
     border-radius: 8px;
@@ -386,11 +416,39 @@ aside {
 /* Estilos para el boton de carrito de compra */
 
 .add-to-cart:hover{
-  /* background-color: var(--violet-light);
-  border-radius: 12px; */
   box-shadow: 0 0px 12px rgba(247, 121, 226, 0.911);
 
   border-radius: 60px;
+}
+
+.btn-crud:hover{
+  box-shadow: 0 0px 18px rgba(250, 16, 211, 0.911);
+  border-radius: 60px;
+}
+
+
+.input {
+  width: 85%; 
+  background-color: var(--text-input-field);
+  border: none;
+  border-radius: 8px;
+  height: 30px;
+  font-size: var(--md);
+  padding: 6px;
+  margin: 4px 24px 8px 24px;
+}
+
+
+.textarea {
+  width: 85%;
+  background-color: var(--text-input-field);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--sm);
+  padding: 6px;
+  margin: 4px 24px 24px 24px;
+  resize: vertical; /* Esto permite que el textarea sea redimensionable verticalmente */
+  min-height: 100px; /* Altura mínima para el textarea */
 }
 
   @media (max-width: 640px) {
@@ -419,6 +477,11 @@ aside {
       width: 140px;
       height: 140px;
     }  
+
+    .product-info-edit-title{
+      color: var(--black);
+      margin-top: 66px;
+    }
   }
 
   @media (min-width: 641px) {

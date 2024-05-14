@@ -90,6 +90,28 @@ productList.push({
     description: 'Lay plana de suero de cosméticos y cristalería de laboratorio con hojas frescas de aloe vera sobre fondo verde brillante.',
 });
 
+productList.push({
+    name: 'Lápiz labial de larga duración',
+    price: 120,
+    image: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
+    description: ': Este producto es un suero concentrado diseñado para ser utilizado durante la noche. Contiene ingredientes especiales como retinol, ácido hialurónico y antioxidantes, que trabajan juntos para hidratar la piel, reducir arrugas y líneas de expresión, y promover la renovación celular mientras duermes',
+});
+
+productList.push({
+    name: 'Sérum rejuvenecedor nocturno',
+    price: 220,
+    image: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
+    description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
+});
+
+productList.push({
+    name: 'Lay plana de suero',
+    price: 320,
+    image: 'https://media.istockphoto.com/id/1336084356/es/foto/lay-plana-de-suero-de-cosm%C3%A9ticos-y-cristaler%C3%ADa-de-laboratorio-con-hojas-frescas-de-aloe-vera.jpg?s=1024x1024&w=is&k=20&c=R9wSK1MeekVFSaQuLRNdG3pvgxcKgG1Uo-LDGWm2aAM=',
+    description: 'Lay plana de suero de cosméticos y cristalería de laboratorio con hojas frescas de aloe vera sobre fondo verde brillante.',
+});
+
+
 function showProducts(arr) {
     for (const product of arr) {
         const productCard = document.createElement('div');
