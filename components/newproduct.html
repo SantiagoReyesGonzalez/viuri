@@ -19,13 +19,13 @@
 
       <ul>
         <li>
-          <a href="newproduct.html">Crear nuevo producto</a>
+          <a href="#">Crear nuevo producto</a>
         </li>
         <li>
           <a href="#">Reporte De ventas</a>
         </li>
         <li>
-          <a href="#">Productos</a>
+          <a href="productmanagement.html">Productos</a>
         </li>
       </ul>
     </div>
@@ -85,28 +85,29 @@
     </div>
   </nav>
 
-  <aside id="productDetail" class="inactive">
-    <div class="product-detail-close">
-      <img src="../icons/icon_close.png" alt="close">
-    </div>
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="bike">
+  <div id="productDetail" class="newProductContainer">
+    <p class="product-info-new-title">CREAR PRODUCTO</p>
     <div class="product-info">
-      <p>$35,00</p>
-      <p>Bike</p>
-      <p>With its practical position, this bike also fulfills a decorative function, add your hall or workspace.</p>
-      <button class="primary-button add-to-cart-button">
-        <img src="../icons/bt_add_to_cart.svg" alt="add to cart">
-        Add to cart
-      </button>
-    </div>
-  </aside>
+        <label for="urlImg" class="labelUrlProduct">URL de la imagen</label>
+        <input type="url" id="urlImg" name="urlImg" required="true" class="input">
+        
+        <label for="priceProductNew">Precio</label>
+        <input type="number" id="priceProductNew" name="priceProductNew" required="true" class="input">
 
-  <section class="main-container">
-    <div class="cards-container">
+        <label for="nameProductNew">Nombre</label>
+        <input type="text" id="nameProductNew" name="nameProductNew" required="true" class="input">
+        
+        <label for="stockProductNew">Stock</label>
+        <input type="number" id="stockProductNew" name="stockProductNew" required="true" class="input">
 
-      
+        <label for="descriptionProductNew">Descripción</label>
+        <textarea id="descriptionProductNew" name="descriptionProductNew" required="true" class="textarea"></textarea>
     </div>
-  </section>
-  <script src="../scripts/manager.js"></script>
+    <button class="primary-button">Guardar</button>
+</div>
+
+
+
+  <script src="../scripts/newproduct.js"></script>
 </body>
 </html>

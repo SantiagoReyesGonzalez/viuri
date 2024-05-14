@@ -309,7 +309,8 @@ aside {
     width: 35px;
     height: 35px;
   }
-  .product-card .product-info div p:nth-child(1) {
+  .product-card .product-info div p:nth-child(1),
+  .product-card .product-info div p:nth-child(3) {
     font-weight: bold;
     font-size: var(--md);
     margin-top: 0;
@@ -338,7 +339,7 @@ aside {
   }
 
 
-  .product-info-edit-title{
+  .product-info-edit-title ,.product-info-new-title{
     color: var(--black);
     font-size: 22px;
     margin-top: 36px;
@@ -451,6 +452,24 @@ aside {
   min-height: 100px; /* Altura mínima para el textarea */
 }
 
+
+/* Estos para el formulario de crear producto */
+
+.newProductContainer {
+    background-color: var(--white);
+    width: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 0px 0px 0px 4px;
+    border-style: solid;
+    border-color: white;
+    z-index: -1;
+}
+
+
   @media (max-width: 640px) {
     .menu {
       display: block;
@@ -482,6 +501,10 @@ aside {
       color: var(--black);
       margin-top: 66px;
     }
+
+    .newProductContainer {
+      width: 90%;
+  }
   }
 
   @media (min-width: 641px) {

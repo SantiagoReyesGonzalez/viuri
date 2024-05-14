@@ -19,6 +19,7 @@ productList.push({
     price: 120,
     image: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
     description: 'Este producto es un suero concentrado diseñado para ser utilizado durante la noche. Contiene ingredientes especiales como retinol, ácido hialurónico y antioxidantes, que trabajan juntos para hidratar la piel, reducir arrugas y líneas de expresión, y promover la renovación celular mientras duermes',
+    stock: 55,
 });
 
 productList.push({
@@ -26,6 +27,7 @@ productList.push({
     price: 220,
     image: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
     description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
+    stock: 40,
 });
 
 
@@ -59,11 +61,17 @@ function showProducts(arr) {
         const productInfoDiv = document.createElement('div');
         const productPrice = document.createElement('p');
         productPrice.innerText = '$' + product.price;
+
         const productName = document.createElement('p');
         productName.innerText = product.name;
+
+        const productStock = document.createElement('p');
+        productStock.innerText = 'Stock: ' + product.stock;
     
         productInfoDiv.appendChild(productPrice);
         productInfoDiv.appendChild(productName);
+        productInfoDiv.appendChild(productStock);
+
         
         // Se crean el boton de editar y eliminar
         const productInfoFigure = document.createElement('figure');
@@ -92,13 +100,6 @@ function showProducts(arr) {
     }
 }
 
-function openProductEditor(event) {
-
-    const productName = event.currentTarget.dataset.productName;
-    createProductEditorContainer(productName);
-    //productDetailContainer.classList.remove('inactive');
-    ClosedDesktopMenu();
-}
 
 
 function ClosedDesktopMenu() {
@@ -187,7 +188,7 @@ function createProductEditorContainer(productName) {
     priceProductEditor.value = foundProductDetail.price;
 
 
-    //label del input del precio
+    //label del input del nombre
     const labelnameProductEditor = document.createElement('label');
     labelnameProductEditor.setAttribute('for', 'nameProductEditor');
     labelnameProductEditor.textContent= 'Nombre';
@@ -199,6 +200,22 @@ function createProductEditorContainer(productName) {
     nameProductEditor.setAttribute("required", "true");
     nameProductEditor.classList.add("input");
     nameProductEditor.value = foundProductDetail.name;
+
+
+    // Label para el input del stock
+    const labelStockProductEditor = document.createElement('label');
+    labelStockProductEditor.setAttribute('for', 'stockProductEditor');
+    labelStockProductEditor.textContent = 'Stock';
+
+    // Input para el stock del producto
+    const stockProductEditor = document.createElement('input');
+    stockProductEditor.setAttribute('type', 'number');
+    stockProductEditor.setAttribute('id', 'stockProductEditor');
+    stockProductEditor.setAttribute('name', 'stockProductEditor');
+    stockProductEditor.setAttribute('required', 'true');
+    stockProductEditor.classList.add('input');
+    stockProductEditor.value = foundProductDetail.stock;
+
 
     // Label para el textarea
     const labelDescriptionProductEditor = document.createElement('label');
@@ -227,6 +244,9 @@ function createProductEditorContainer(productName) {
 
     productInfo.appendChild(labelnameProductEditor);      
     productInfo.appendChild(nameProductEditor);  
+
+    productInfo.appendChild(labelStockProductEditor);      
+    productInfo.appendChild(stockProductEditor);  
 
     productInfo.appendChild(labelDescriptionProductEditor);      
     productInfo.appendChild(descriptionProductEditor);  
