@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/login.css">
+  <title>Registrarse</title>
+</head>
+<body>
+  <div class="login">
+    <div class="form-container">
+      <img src="../logos/logo_viuri_morado.svg" alt="logo" class="logo">
+
+
+
+      <h1 class="title">Crear nueva cuenta</h1>
+      <p class="subtitle">Ingrese los datos para su nueva cuenta</p>
+
+      
+      <form action="/" class="form" id="registration-form">
+        <label for="first-name" class="label">Nombre</label>
+        <input type="text" id="first-name" placeholder="Pepita" class="input input-first-name" name="first-name">
+        
+        <label for="last-name" class="label">Apellidos</label>
+        <input type="text" id="last-name" placeholder="Hander" class="input input-last-name" name="last-name">
+    
+        <label for="email" class="label">Correo electrónico</label>
+        <input type="email" id="email" placeholder="pepita@viuri.com" class="input input-email" name="email">
+    
+        <label for="address" class="label">Dirección</label>
+        <input type="text" id="address" placeholder="Calle 123, Ciudad, País" class="input input-address" name="address">
+    
+        <label for="password" class="label">Contraseña</label>
+        <input type="password" id="password" placeholder="*********" class="input input-password" name="password">
+    
+        <label for="new-password" class="label">Repita su contraseña</label>
+        <input type="password" id="new-password" placeholder="*********" class="input input-password" name="new-password">
+    
+        <input type="submit" value="Confirmar" class="primary-button login-button">
+    </form>
+        
+    </div>
+  </div>
+  <script src="../scripts/checkRegister.js"></script>
+</body>
+</html>
