@@ -6,7 +6,7 @@
 - Santiago Reyes - Desarrollador 
 
 # Viuri
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](./images/logo_viuri_morado.svg)
 ## _Empresa especializada en la venta de productos de belleza femenina, Online_
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
@@ -33,10 +33,10 @@ El código fuente de nuestro proyecto está disponible en nuestro repositorio de
 ## Capturas de los Daily:
 
 ### Daily del 19 de abril de 2024:
-![Daily del 19 de abril de 2024](ruta_a_la_imagen)
+![Daily del 19 de abril de 2024](./images/19-04.jpeg)
 
 ### Daily del 26 de abril de 2024:
-![Daily del 26 de abril de 2024](ruta_a_la_imagen)
+![Daily del 26 de abril de 2024](./images/26-04.jpeg)
 
 ### Daily del 17 de mayo de 2024:
-![Daily del 17 de mayo de 2024](ruta_a_la_imagen)
+![Daily del 17 de mayo de 2024](./images/17-05.jpeg)
