@@ -31,8 +31,8 @@ function validateForm(event) {
     event.preventDefault(); // Evita el comportamiento de enviar y recargar el submit.
 
     // Obtener los valores de los campos
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
+    const name = document.getElementById('name').value;
+    const lastName = document.getElementById('lastname').value;
     const email = document.getElementById('email').value;
     const address = document.getElementById('address').value;
     const password = document.getElementById('password').value;
@@ -44,7 +44,7 @@ function validateForm(event) {
     const addressRegex = /^[a-zA-Z0-9\s#\-áéíóúÁÉÍÓÚñÑ]+$/;
 
     // Validar nombre
-    if (!validateField(nameRegex, firstName)) {
+    if (!validateField(nameRegex, name)) {
         alert('El nombre solo puede contener letras y espacios.');
         return;
     }
@@ -81,8 +81,17 @@ function validateForm(event) {
 
     // Si pasa todas las validaciones, enviar el formulario
     alert('Formulario enviado correctamente.');
+
+    const userData = {
+        name: name,
+        lastname: lastName,
+        email: email,
+        address: address,
+        password: password
+    };
+
     this.submit();
 }
 
-// Agregar el evento de submit al formulario
+
 document.querySelector('.form').addEventListener('submit', validateForm);

@@ -1,0 +1,28 @@
+{
+  "name": "viuri",
+  "version": "1.0.0",
+  "description": "Este es el proyecto de ingenieria de software en el que se desarrolla una aplicación de una ecommerce usando metologoias agiles SCRUM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "belleza",
+    "productos",
+    "comestica",
+    "ecommerce",
+    "javascript",
+    "html",
+    "css",
+    "node.js",
+    "express",
+    "mongoose",
+    "mongodbe"
+  ],
+  "author": "Santiago Reyes Gonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2",
+    "mongoose": "8.4.0"
+  }
+}

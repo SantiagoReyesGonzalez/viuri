@@ -1,0 +1,11 @@
+### Crea un usuario con POST
+POST http://localhost:3000/user/new
+Content-Type: application/json
+
+{
+  "name": "Pepita",
+  "lastname": "Perez",
+  "email": "prueba@gmail.com",
+  "address": "Calle siempre viva",
+  "password": "1234",
+}
