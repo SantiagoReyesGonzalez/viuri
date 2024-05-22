@@ -5,7 +5,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const productDetailCloseIcon = document.querySelector('.product-detail-close');
 const cardsContainer = document.querySelector('.cards-container');
 const productDetailContainer = document.querySelector('#productDetail');
-const productList = [];
+let productList = [];
 
 
 
@@ -14,7 +14,7 @@ menuEmanil.addEventListener('click',toggleDesktopMenu);
 menuHanIcon.addEventListener('click',toggleMobileMenu);
 
 
-productList.push({
+/* productList.push({
     name: 'Lápiz labial de larga duración',
     price: 120,
     image: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
@@ -28,7 +28,7 @@ productList.push({
     image: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
     description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
     stock: 40,
-});
+}); */
 
 
 
@@ -280,22 +280,12 @@ async function fetchProducts() {
         }
         const productListString = await response.text();
         //displayProducts(productListString);
-        const productsArray = JSON.parse(productListString);
-        console.log(productsArray)
-        showProducts(productsArray);
+        productList = JSON.parse(productListString);
+        console.log(productList)
+        showProducts(productList);
 
     } catch (error) {
         console.error('Error:', error);
     }
 }
-
-/* function displayProducts(productListString) {
-    const productsContainer = document.getElementById('productsContainer');
-    productsContainer.innerHTML = `<pre>${productListString}</pre>`;
-} */
-
-
-
-
-//showProducts(productList);
 
