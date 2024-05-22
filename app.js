@@ -137,11 +137,14 @@ app.get('/products', async (req, res) => {
     }
 });
 
-app.put('/product/:id', async (req, res) => {
+app.put('/product/:id/:urlImg/:priceProductEditor/:nameProductEditor/:stockProductEditor/:descriptionProductEditor', async (req, res) => {
     try {
         const productId = req.params.id;
         const urlImg = req.params.urlImg;
-        const { priceProductEditor, nameProductEditor, stockProductEditor, descriptionProductEditor } = req.body;
+        const priceProductEditor = req.params.priceProductEditor;
+        const nameProductEditor = req.params.nameProductEditor;
+        const stockProductEditor = req.params.stockProductEditor;
+        const descriptionProductEditor = req.params.descriptionProductEditor;
 
         // Imprimir valores en la consola para depuración
         console.log('ID del producto:', productId);
@@ -170,6 +173,7 @@ app.put('/product/:id', async (req, res) => {
         res.status(500).json({ message: 'Error al actualizar el producto', error: error.message });
     }
 });
+
 
 
 

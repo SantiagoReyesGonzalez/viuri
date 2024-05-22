@@ -316,30 +316,20 @@ async function updateProduct(event) {
     event.preventDefault(); // Evitar el envío estándar del formulario
 
     const productId = document.getElementById('idProductEditor').value;
-    
-    const url = `/product/${productId}`;
+    const urlImg = encodeURIComponent(document.getElementById('urlImg').value);
+    const priceProductEditor = encodeURIComponent(document.getElementById('priceProductEditor').value);
+    const nameProductEditor = encodeURIComponent(document.getElementById('nameProductEditor').value);
+    const stockProductEditor = encodeURIComponent(document.getElementById('stockProductEditor').value);
+    const descriptionProductEditor = encodeURIComponent(document.getElementById('descriptionProductEditor').value);
 
-    const urlImg = document.getElementById('urlImg').value;
-    const priceProductEditor = document.getElementById('priceProductEditor').value;
-    const nameProductEditor = document.getElementById('nameProductEditor').value;
-    const stockProductEditor = document.getElementById('stockProductEditor').value;
-    const descriptionProductEditor = document.getElementById('descriptionProductEditor').value;
-
-    const data = {
-        urlImg,
-        priceProductEditor,
-        nameProductEditor,
-        stockProductEditor,
-        descriptionProductEditor
-    };
+    const url = `/product/${productId}/${urlImg}/${priceProductEditor}/${nameProductEditor}/${stockProductEditor}/${descriptionProductEditor}`;
 
     try {
         const response = await fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+            }
         });
 
         if (response.ok) {
