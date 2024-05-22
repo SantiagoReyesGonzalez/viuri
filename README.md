@@ -6,12 +6,8 @@
 - Santiago Reyes - Desarrollador 
 
 # Viuri
-![Logo](./images/logo_viuri_morado.svg)
+![Logo](./images/logo_viuri_morado.svg){:width="100px" height="100px"}
 ## _Empresa especializada en la venta de productos de belleza femenina, Online_
-
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ### Repositorio en GitHub:
 El código fuente de nuestro proyecto está disponible en nuestro repositorio de [GitHub](https://github.com/SantiagoReyesGonzalez/viuri).
