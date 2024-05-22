@@ -85,6 +85,7 @@ function showProducts(arr) {
         const productFigureImgDelete = document.createElement('img');
         productFigureImgDelete.setAttribute('src', '../icons/delete.png');
         productFigureImgDelete.classList.add('btn-crud')
+        productFigureImgDelete.addEventListener('click',consultarIdProducto);
 
     
         productInfoFigure.appendChild(productFigureImgEdit);
@@ -337,6 +338,7 @@ async function updateProduct(event) {
             console.log('Producto actualizado:', updatedProduct);
             alert('Producto actualizado exitosamente');
             // Aquí puedes agregar lógica para redirigir o actualizar la UI según sea necesario
+            window.location.href = '/components/productmanagement.html';
         } else {
             const errorData = await response.json();
             console.error('Error al actualizar el producto:', errorData);
@@ -347,3 +349,43 @@ async function updateProduct(event) {
         alert('Error de red: ' + error.message);
     }
 }
+
+// funcion para eliminar productos
+
+async function deleteProduct(productId) {
+    try {
+        const response = await fetch(`/product/${productId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al eliminar el producto');
+        }
+
+        const result = await response.json();
+        window.location.href = '/components/productmanagement.html';
+        console.log('Producto eliminado:', result);
+        // Aquí puedes añadir cualquier lógica adicional, como actualizar la interfaz de usuario
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+ function consultarIdProducto(event) {
+    // Obtener el párrafo que contiene el nombre del producto
+    const nombreProducto = event.target.closest('.product-card').querySelectorAll('p')[1].textContent;
+
+    let productId = '';
+    //Esto nos permite buscar el nombre del producto que lanzo el evento
+    for (const product of productList) {
+        if (product.name === nombreProducto ) {
+            productId = product._id;
+        }
+    }
+
+
+    deleteProduct(productId)
+ }

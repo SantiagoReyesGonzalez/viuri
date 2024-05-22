@@ -175,7 +175,26 @@ app.put('/product/:id/:urlImg/:priceProductEditor/:nameProductEditor/:stockProdu
 });
 
 
+app.delete('/product/:id', async (req, res) => {
+    try {
+        const productId = req.params.id;
 
+        // Imprimir valores en la consola para depuración
+        console.log('ID del producto a eliminar:', productId);
+
+        // Eliminar el producto
+        const deletedProduct = await Product.findByIdAndDelete(productId);
+
+        if (!deletedProduct) {
+            return res.status(404).json({ message: 'Producto no encontrado' });
+        }
+
+        res.json({ message: 'Producto eliminado correctamente', product: deletedProduct });
+    } catch (error) {
+        console.error('Error al eliminar el producto: ', error);
+        res.status(500).json({ message: 'Error al eliminar el producto', error: error.message });
+    }
+});
 
 app.listen(puerto,() =>{
     console.log(`escuchando en http://localhost:${puerto}`)
