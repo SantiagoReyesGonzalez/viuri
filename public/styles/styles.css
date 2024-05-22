@@ -1,4 +1,4 @@
-:root {
+  :root {
     --white: #FFFFFF;
     --black: #000000;
     --violet-light: #b12a86;
@@ -14,6 +14,7 @@
   body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    
   }
 
   .inactive{
@@ -33,6 +34,92 @@
     width: 60px;
     border-radius: 4px;
   }
+
+  #contenedor-informacion h2 {
+    text-align: center;
+    color: #333; /* Cambiar el color del texto */
+    font-size: 24px; /* Cambiar el tamaño del texto */
+
+}
+  .informacion-info {
+    text-align: justify;
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    margin: 5px auto; /* Margen superior e inferior automático, centrando horizontalmente */
+    padding: 20px; /* Agregar espacio alrededor del contenido */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+  }
+  #contenedor-informacion {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0 solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    transition: width 0.5s ease;
+  }
+  #contenedor-informacion > div {
+    display: none; /* Ocultar todos los párrafos inicialmente */
+  }
+  #contenedor-informacion > div:first-child {
+    display: block; /* Mostrar el primer párrafo inicialmente */
+  }
+  /* Ajustar estilos para pantallas pequeñas */
+  @media screen and (max-width: 768px) {
+  #contenedor-informacion {
+      width: 90%; /* Reducir el tamaño del contenedor en pantallas pequeñas */
+  }
+  }
+
+  .informacion-info {
+    position: relative;
+    }
+
+  .anterior-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../icons/boton_back.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    }
+
+  .siguiente-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: url('../icons/boton_next.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    }
+
+  .anterior-btn {
+    left: 8px;
+    }
+
+  .siguiente-btn {
+    right: 8px;
+    }
+
+  .informacion-info p {
+    margin-left: 40px; /* Ajustar el margen izquierdo para el párrafo */
+    margin-right: 40px; /* Ajustar el margen derecho para el párrafo */
+    }    
+
   .navbar-left ul,
   .navbar-right ul {
     list-style: none;
@@ -93,7 +180,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
   .desktop-menu {
     position: absolute;
@@ -174,7 +261,7 @@
 
   /* Aside (product detail y carrito) */
 
-aside {
+  aside {
   background-color: var(--white);
   width: 360px;
   box-sizing: border-box;
@@ -183,30 +270,30 @@ aside {
   border-width: 0px 0px 0px 4px;
   border-style: solid;
   border-color: white;
-}
+  }
 
-/* ShoppingCart */
+  /* ShoppingCart */
 
-#shoppingCartContainer {
+  #shoppingCartContainer {
   padding: 24px;
   border-radius: 20px;
-}
+  }
 
-.back-shopping-cart-container:hover{
+  .back-shopping-cart-container:hover{
   cursor: pointer;
-}
-.title-container {
+  }
+  .title-container {
   display: flex;
-}
-.title-container img {
+  }
+  .title-container img {
   transform: rotate(180deg);
   margin-right: 14px;
-}
-.title {
+  }
+  .title {
   font-size: var(--lg);
   font-weight: bold;
-}
-.order {
+  }
+  .order {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 16px;
@@ -215,43 +302,43 @@ aside {
   margin-bottom: 24px;
   border-radius: 8px;
   padding: 0 24px;
-}
-.order p:nth-child(1) {
+  }
+  .order p:nth-child(1) {
   display: flex;
   flex-direction: column;
-}
-.order p span:nth-child(1) {
+  }
+  .order p span:nth-child(1) {
   font-size: var(--md);
   font-weight: bold;
-}
-.order p:nth-child(2) {
+  }
+  .order p:nth-child(2) {
   text-align: end;
   font-weight: bold;
-}
-.shopping-cart {
+  }
+  .shopping-cart {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   gap: 16px;
   margin-bottom: 24px;
   align-items: center;
-}
-.shopping-cart figure {
+  }
+  .shopping-cart figure {
   margin: 0;
-}
-.shopping-cart figure img {
+  }
+  .shopping-cart figure img {
   width: 70px;
   height: 70px;
   border-radius: 20px;
   object-fit: cover;
-}
-.shopping-cart p:nth-child(2) {
+  }
+  .shopping-cart p:nth-child(2) {
   color: var(--very-light-pink);
-}
-.shopping-cart p:nth-child(3) {
+  }
+  .shopping-cart p:nth-child(3) {
   font-size: var(--md);
   font-weight: bold;
-}
-.primary-button {
+  }
+  .primary-button {
   background-color: var(--violet-light);
   border-radius: 8px;
   border: none;
@@ -261,21 +348,21 @@ aside {
   font-size: var(--md);
   font-weight: bold;
   height: 50px;
-}
+  }
 
-.primary-button:hover {
+  .primary-button:hover {
     background-color: var(--violet-light-hover);
     border-color: var(--violet-light);
     border: 2px;
     border-style: double;
 
-}
+  }
 
 
-/* Estilos para las tarjetas de los productos */
+  /* Estilos para las tarjetas de los productos */
 
 
-.cards-container {
+  .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
@@ -323,10 +410,10 @@ aside {
     color: var(--very-light-pink);
   }
 
-/* Estilos para nuestro productDetail, tarjeta que se abre al seleccionar un producto */
+  /* Estilos para nuestro productDetail, tarjeta que se abre al seleccionar un producto */
 
 
-.product-detail-close {
+  .product-detail-close {
     background: var(--white);
     width: 14px;
     height: 14px;
@@ -414,13 +501,13 @@ aside {
     justify-content: center;
   }
 
-/* Estilos para el boton de carrito de compra */
+  /* Estilos para el boton de carrito de compra */
 
 .add-to-cart:hover{
   box-shadow: 0 0px 12px rgba(247, 121, 226, 0.911);
 
   border-radius: 60px;
-}
+  }
 
 .btn-crud:hover{
   box-shadow: 0 0px 18px rgba(250, 16, 211, 0.911);
@@ -512,4 +599,3 @@ aside {
         display: none;
     }
   }
-

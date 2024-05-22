@@ -19,13 +19,10 @@
 
       <ul>
         <li>
-          <a href="#">Accesorios</a>
+          <a href="#">Productos</a>
         </li>
         <li>
-          <a href="#">Esenciales</a>
-        </li>
-        <li>
-          <a href="#">Tratamientos</a>
+          <a href="#" class="sobre-nosotros">Sobre nosotros</a>
         </li>
         <li>
           <a href="./components/productmanagement.html">Administrador</a>
@@ -59,7 +56,7 @@
           </li>
         </ul>
     </div>
-
+    
     <div class="mobile-menu inactive">
         <ul>
           <li>
@@ -97,7 +94,41 @@
     </div>
   </nav>
 
+  <div id="contenedor-informacion" class="inactive">
+    <div id="quienes-somos-info" class="informacion-info">
+        <button class="anterior-btn"></button>
+        <h2>Quienes Somos</h2>
+        <p>"En Viuri, nos dedicamos a ofrecer una experiencia única en el mundo de la belleza. Nos enorgullece proporcionar 
+        productos de alta calidad que realzan la belleza natural de cada individuo. Nuestra pasión por la innovación y el 
+        cuidado personal nos impulsa a brindar soluciones efectivas que satisfacen las necesidades y deseos de nuestros clientes. 
+        Con un enfoque en la excelencia y la autenticidad, nos esforzamos por ser un referente en la industria de la belleza, 
+        ofreciendo productos que inspiran confianza y empoderan a nuestros clientes a sentirse y lucir lo mejor posible."</p>
+        <button class="siguiente-btn"></button>
+    </div>
 
+    <div id="mision-info" class="informacion-info">
+        <button class="anterior-btn"></button>
+        <h2>Nuestra Misión</h2>
+        <p>En Viuri, nos dedicamos a proporcionar productos de belleza de alta calidad que resalten la autenticidad y la individualidad 
+        de cada persona. Nos esforzamos por inspirar confianza y empoderar a nuestros clientes para que se sientan seguros y hermosos 
+        en su propia piel. Nuestra misión es ofrecer una experiencia única en el mundo de la belleza, brindando soluciones 
+        innovadoras que satisfagan las necesidades y deseos de nuestros clientes.</p>
+        <button class="siguiente-btn"></button>
+    </div>
+
+    <div id="vision-info" class="informacion-info">
+        <button class="anterior-btn"></button>
+        <h2>Nuestra Visión</h2>
+        <p>Nuestra visión en Viuri es convertirnos en líderes en la industria de la belleza, siendo reconocidos por nuestra excelencia
+        en productos y servicios. Nos esforzamos por ser una marca globalmente reconocida por nuestra pasión por la innovación, la
+        calidad y el compromiso con la satisfacción del cliente. Buscamos transformar la forma en que las personas perciben y experimentan
+        la belleza, promoviendo una cultura de confianza, inclusión y autenticidad.</p>
+        <button class="siguiente-btn"></button>
+    </div>
+</div>
+
+
+  
   <aside id="shoppingCartContainer" class=" inactive">
 
     <div class="title-container">
@@ -151,4 +182,38 @@
   </section>
   <script src="scripts/main.js"></script>
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var parrafos = document.querySelectorAll(".informacion-info");
+      const sobreNosotros = document.querySelector('.sobre-nosotros');
+      const contenedorInformacion = document.getElementById('contenedor-informacion')
+
+      sobreNosotros.addEventListener('click',toggleSobreNosotros)
+      
+      parrafos.forEach(function(parrafo, index) {
+          var anteriorBtn = parrafo.querySelector('.anterior-btn');
+          var siguienteBtn = parrafo.querySelector('.siguiente-btn');
+
+          anteriorBtn.addEventListener("click", function() {
+              mostrarParrafo((index - 1 + parrafos.length) % parrafos.length);
+          });
+
+          siguienteBtn.addEventListener("click", function() {
+              mostrarParrafo((index + 1) % parrafos.length);
+          });
+      });
+
+      function mostrarParrafo(indice) {
+          parrafos.forEach(function(parrafo, i) {
+              parrafo.style.display = i === indice ? "block" : "none";
+          });
+      }
+
+      function toggleSobreNosotros(){
+        contenedorInformacion.classList.toggle('inactive');
+      }
+
+      mostrarParrafo(0); // Mostrar el primer párrafo por defecto
+  });
+</script>
 </html>
