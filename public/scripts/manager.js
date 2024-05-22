@@ -217,6 +217,20 @@ function createProductEditorContainer(productName) {
     stockProductEditor.value = foundProductDetail.stock;
 
 
+    //label del input del id
+    const labelIdProductEditor = document.createElement('label');
+    labelIdProductEditor.setAttribute('for', 'idProductEditor');
+    labelIdProductEditor.textContent= 'ID';
+    //input para el nombre del producto
+    const idProductEditor = document.createElement('input')
+    idProductEditor.setAttribute("type", "text");
+    idProductEditor.setAttribute("id", "idProductEditor");
+    idProductEditor.setAttribute("name", "idProductEditor");
+    idProductEditor.setAttribute("required", "true");
+    idProductEditor.setAttribute("readonly", "true"); // Añadir el atributo readonly
+    idProductEditor.classList.add("input");
+    idProductEditor.value = foundProductDetail._id;
+
     // Label para el textarea
     const labelDescriptionProductEditor = document.createElement('label');
     labelDescriptionProductEditor.setAttribute('for', 'descriptionProductEditor');
@@ -231,8 +245,11 @@ function createProductEditorContainer(productName) {
 
 
     //Aqui se agregan todos los elementos al contenedor
-    const productInfo = document.createElement('div');
+    const productInfo = document.createElement('form');
     productInfo.classList.add('product-info');
+    // Agregar event listener al formulario
+    productInfo.addEventListener('submit', updateProduct);
+
 
     productInfo.appendChild(productDetailClose);    
 
@@ -246,7 +263,10 @@ function createProductEditorContainer(productName) {
     productInfo.appendChild(nameProductEditor);  
 
     productInfo.appendChild(labelStockProductEditor);      
-    productInfo.appendChild(stockProductEditor);  
+    productInfo.appendChild(stockProductEditor);
+    
+    productInfo.appendChild(labelIdProductEditor);      
+    productInfo.appendChild(idProductEditor);  
 
     productInfo.appendChild(labelDescriptionProductEditor);      
     productInfo.appendChild(descriptionProductEditor);  
@@ -257,9 +277,9 @@ function createProductEditorContainer(productName) {
     confirmChangeButton.classList.add('primary-button');
     confirmChangeButton.innerText = 'Actualizar'
 
-
+    productInfo.appendChild(confirmChangeButton);
     productDetailContainer.appendChild(productInfo);
-    productDetailContainer.appendChild(confirmChangeButton);
+    
 
 }
 
@@ -289,3 +309,51 @@ async function fetchProducts() {
     }
 }
 
+
+// actualizar los productos
+
+async function updateProduct(event) {
+    event.preventDefault(); // Evitar el envío estándar del formulario
+
+    const productId = document.getElementById('idProductEditor').value;
+    
+    const url = `/product/${productId}`;
+
+    const urlImg = document.getElementById('urlImg').value;
+    const priceProductEditor = document.getElementById('priceProductEditor').value;
+    const nameProductEditor = document.getElementById('nameProductEditor').value;
+    const stockProductEditor = document.getElementById('stockProductEditor').value;
+    const descriptionProductEditor = document.getElementById('descriptionProductEditor').value;
+
+    const data = {
+        urlImg,
+        priceProductEditor,
+        nameProductEditor,
+        stockProductEditor,
+        descriptionProductEditor
+    };
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const updatedProduct = await response.json();
+            console.log('Producto actualizado:', updatedProduct);
+            alert('Producto actualizado exitosamente');
+            // Aquí puedes agregar lógica para redirigir o actualizar la UI según sea necesario
+        } else {
+            const errorData = await response.json();
+            console.error('Error al actualizar el producto:', errorData);
+            alert('Error al actualizar el producto: ' + errorData.message);
+        }
+    } catch (error) {
+        console.error('Error de red:', error);
+        alert('Error de red: ' + error.message);
+    }
+}

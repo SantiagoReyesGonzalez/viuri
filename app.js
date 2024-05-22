@@ -137,6 +137,42 @@ app.get('/products', async (req, res) => {
     }
 });
 
+app.put('/product/:id', async (req, res) => {
+    try {
+        const productId = req.params.id;
+        const urlImg = req.params.urlImg;
+        const { priceProductEditor, nameProductEditor, stockProductEditor, descriptionProductEditor } = req.body;
+
+        // Imprimir valores en la consola para depuración
+        console.log('ID del producto:', productId);
+        console.log('URL de la imagen:', urlImg);
+        console.log('Precio:', priceProductEditor);
+        console.log('Nombre:', nameProductEditor);
+        console.log('Cantidad:', stockProductEditor);
+        console.log('Descripción:', descriptionProductEditor);
+
+        // Actualizar el producto
+        const updatedProduct = await Product.findByIdAndUpdate(productId, {
+            urlImg,
+            price: priceProductEditor,
+            name: nameProductEditor,
+            stock: stockProductEditor,
+            description: descriptionProductEditor
+        }, { new: true });
+
+        if (!updatedProduct) {
+            return res.status(404).json({ message: 'Producto no encontrado' });
+        }
+
+        res.json(updatedProduct);
+    } catch (error) {
+        console.error('Error al actualizar el producto: ', error);
+        res.status(500).json({ message: 'Error al actualizar el producto', error: error.message });
+    }
+});
+
+
+
 app.listen(puerto,() =>{
     console.log(`escuchando en http://localhost:${puerto}`)
 })
