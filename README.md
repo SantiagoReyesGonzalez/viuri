@@ -3,7 +3,7 @@
 - ✨Jesica Fernanda Bernate Delgado✨ -Desarrollador
 - Christian Javier Zuñiga Mera - Desarrollador
 - Jean Carlos Lopez Florez - Desarrollador
-- Santiago Reyes - Desarrollador 
+- Santiago Reyes Gonzalez- Desarrollador 
 
 # Viuri
 <img src="./images/logo_viuri_morado.svg" alt="Logo" width="100" height="100">
