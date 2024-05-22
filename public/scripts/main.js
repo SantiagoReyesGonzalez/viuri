@@ -7,7 +7,7 @@ const productDetailCloseIcon = document.querySelector('.product-detail-close');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 const productDetailContainer = document.querySelector('#productDetail');
-const productList = [];
+let productList = [];
 const productListCart = [];
 const prueba = document.querySelector('.prueba');
 const btnAddToCart = document.querySelector('.add-to-cart')
@@ -19,7 +19,7 @@ let CartItemCountIndicator = 0;
 
 
 
-productList.push({
+/* productList.push({
     name: 'Lápiz labial de larga duración',
     price: 120,
     urlImg: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
@@ -35,7 +35,7 @@ productList.push({
     description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
     stock: 40,
 });
-
+ */
 menuEmanil.addEventListener('click',toggleDesktopMenu);
 menuHanIcon.addEventListener('click',toggleMobileMenu);
 menuCarroIcon.addEventListener('click',toggleCarroAside);
@@ -119,7 +119,10 @@ function showProducts(arr) {
         productFigureImg.setAttribute('src', './icons/bt_add_to_cart.svg');
         productFigureImg.classList.add('add-to-cart')
         productFigureImg.dataset.productName = product.name; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen, esto lo utilizaceremos para el addToCart
-        productFigureImg.addEventListener('click', addToCart);
+        productFigureImg.addEventListener('click', () => {
+            addToCart(product.name);
+        });
+    
     
     
         productInfoFigure.appendChild(productFigureImg);
@@ -135,9 +138,6 @@ function showProducts(arr) {
 }
 
 function openProductDetailAside(name, urlImg, price, description) {
-
-    const productName = name;
-    alert(productName)
 
     createProductDetailContainer(name, urlImg, price, description);
     shoppingCartContainer.classList.add('inactive')
@@ -174,11 +174,11 @@ function createProductDetailContainer(name,urlImg,price, description) {
     productDetailClose.addEventListener('click', closeProductDetailAside)
 
     const imgProduct = document.createElement('img');
-    /* for (const product of productList) {
-        if (product.name === productName ) {
+    for (const product of productList) {
+        if (product.name === name ) {
             productDetailMax = product;
         }
-    } */
+    } 
     imgProduct.setAttribute('src', urlImg);
     imgProduct.setAttribute('alt', name)
 
@@ -213,34 +213,41 @@ function createProductDetailContainer(name,urlImg,price, description) {
 
 
     buttonBuytoCart.dataset.productName = name; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen, esto lo utilizaceremos para el addToCart
-    buttonBuytoCart.addEventListener('click' , addToCart);
+    buttonBuytoCart.addEventListener('click', () => {
+        addToCart(name);
+    });
+
 }
 
-function addToCart(event) {
-
-    //Aumenta el contador  del carro de comprar y lo actualiza en la interface
-
+function addToCart(name) {
+    // Aumenta el contador del carrito de compras y lo actualiza en la interfaz
     CartItemCountIndicator += 1;
-    divCartItemCountIndicator.textContent = CartItemCountIndicator ;
+    divCartItemCountIndicator.textContent = CartItemCountIndicator;
 
-    //Traemos el nombre de producto que lo usaremos para buscarlo en la lista de productos
-    const productName = event.currentTarget.dataset.productName;
+    let selectedProductDetail = null;
+    let productFound = false;  // Bandera para verificar si el producto fue encontrado
 
-
-    // Se guarda el producto
-
-    let selectedProductDetail = {};
-
+    // Busca el producto en la lista de productos
     for (const product of productList) {
-        if (product.name === productName ) {
+        console.log(product.name)
+        console.log(name)
+        if (product.name === name) {
             selectedProductDetail = product;
+            productFound = true;
+            break;  // Producto encontrado, salir del bucle
         }
     }
 
-    //Agregamos los productos encontramos a la lista del carrito de compras
-    productListCart.push(selectedProductDetail)
-    showProductListCart();
+    // Verificar si el producto fue encontrado
+    if (productFound) {
+        // Agregamos el producto encontrado a la lista del carrito de compras
+        productListCart.push(selectedProductDetail);
+        showProductListCart();
+    } else {
+        alert('Producto no encontrado');
+    }
 }
+
 
 function deleteToCart(event) {
     //Disminuye el contador  del carro de comprar y lo actualiza en la interface
@@ -334,7 +341,7 @@ async function fetchProducts() {
         }
         const productListString = await response.text();
         //displayProducts(productListString);
-        const productList = JSON.parse(productListString);
+        productList = JSON.parse(productListString);
         console.log(productList)
         showProducts(productList);
 
