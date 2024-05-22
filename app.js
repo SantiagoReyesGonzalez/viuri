@@ -40,6 +40,62 @@ app.post('/user/new', async (req, res) => {
 });
 
 
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        // Buscar al usuario por email
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ message: 'Usuario no encontrado' });
+        }
+
+        // Verificar la contraseña
+        if (user.password !== password) {  // En una aplicación real, la contraseña debería ser hasheada y comparada usando bcrypt
+            return res.status(401).json({ message: 'Contraseña incorrecta' });
+        }
+
+        // Si la autenticación es exitosa, redirigir al dashboard o a otra página
+        res.redirect('/index.html');
+    } catch (error) {
+        console.error('Error al autenticar al usuario: ', error);
+        res.status(500).json({ message: 'Error al autenticar al usuario', error: error.message });
+    }
+});
+
+app.post('/change-password', async (req, res) => {
+    const { email, currentPassword, password } = req.body;
+
+    console.log('Email:', email);
+    console.log('Current Password:', currentPassword);
+    console.log('New Password:', password);
+
+
+    try {
+        // Buscar al usuario por email
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        // Verificar la contraseña actual
+        if (user.password !== currentPassword) {  // En una aplicación real, la contraseña debería ser hasheada y comparada usando bcrypt
+            return res.status(401).json({ message: 'Contraseña actual incorrecta' });
+        }
+
+        // Actualizar la contraseña
+        user.password = password;  // En una aplicación real, la nueva contraseña debería ser hasheada usando bcrypt
+        await user.save();
+
+        res.redirect('/components/login.html');
+    } catch (error) {
+        console.error('Error al cambiar la contraseña: ', error);
+        res.status(500).json({ message: 'Error al cambiar la contraseña', error: error.message });
+    }
+});
+
 
 app.listen(puerto,() =>{
     console.log(`escuchando en http://localhost:${puerto}`)

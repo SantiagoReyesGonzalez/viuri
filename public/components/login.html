@@ -15,12 +15,12 @@
     <div class="form-container">
       <img src="../logos/logo_viuri_morado.svg" alt="logo" class="logo">
 
-      <form action="/" class="form">
+      <form action="/login" class="form" method="post">
         <label for="email" class="label">Correo electrónico</label>
-        <input type="text" id="email" placeholder="platzi@example.cm" class="input input-email">
+        <input type="text" id="email" placeholder="platzi@example.cm" class="input input-email" name="email">
 
         <label for="password" class="label">Contraseña</label>
-        <input type="password" id="password" placeholder="*********" class="input input-password">
+        <input type="password" id="password" placeholder="*********" class="input input-password" name="password">
 
         <input type="submit" value="Iniciar sesión" class="primary-button login-button">
         <a href="newPassword.html">Cambiar mi contraseña</a>
