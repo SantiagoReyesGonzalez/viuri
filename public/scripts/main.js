@@ -19,6 +19,22 @@ let CartItemCountIndicator = 0;
 
 
 
+productList.push({
+    name: 'Lápiz labial de larga duración',
+    price: 120,
+    urlImg: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
+    description: 'Este producto es un suero concentrado diseñado para ser utilizado durante la noche. Contiene ingredientes especiales como retinol, ácido hialurónico y antioxidantes, que trabajan juntos para hidratar la piel, reducir arrugas y líneas de expresión, y promover la renovación celular mientras duermes',
+    stock: 55,
+    id: '1231231231'
+});
+
+productList.push({
+    name: 'Sérum rejuvenecedor nocturno',
+    price: 220,
+    urlImg: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
+    description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
+    stock: 40,
+});
 
 menuEmanil.addEventListener('click',toggleDesktopMenu);
 menuHanIcon.addEventListener('click',toggleMobileMenu);
@@ -69,47 +85,8 @@ function toggleCarroAside() {
 }
 
 
-productList.push({
-    name: 'Lápiz labial de larga duración',
-    price: 120,
-    image: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
-    description: ': Este producto es un suero concentrado diseñado para ser utilizado durante la noche. Contiene ingredientes especiales como retinol, ácido hialurónico y antioxidantes, que trabajan juntos para hidratar la piel, reducir arrugas y líneas de expresión, y promover la renovación celular mientras duermes',
-});
 
-productList.push({
-    name: 'Sérum rejuvenecedor nocturno',
-    price: 220,
-    image: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
-    description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
-});
 
-productList.push({
-    name: 'Lay plana de suero',
-    price: 320,
-    image: 'https://media.istockphoto.com/id/1336084356/es/foto/lay-plana-de-suero-de-cosm%C3%A9ticos-y-cristaler%C3%ADa-de-laboratorio-con-hojas-frescas-de-aloe-vera.jpg?s=1024x1024&w=is&k=20&c=R9wSK1MeekVFSaQuLRNdG3pvgxcKgG1Uo-LDGWm2aAM=',
-    description: 'Lay plana de suero de cosméticos y cristalería de laboratorio con hojas frescas de aloe vera sobre fondo verde brillante.',
-});
-
-productList.push({
-    name: 'Lápiz labial de larga duración',
-    price: 120,
-    image: 'https://media.istockphoto.com/id/487770577/es/foto/maquillaje-ubicado-en-la-tabla-vista-de-frente.jpg?s=1024x1024&w=is&k=20&c=2Y2kyg4QYYQo5JOQyNYxTLdy5WN6BnE6ECTA85t-92s=',
-    description: ': Este producto es un suero concentrado diseñado para ser utilizado durante la noche. Contiene ingredientes especiales como retinol, ácido hialurónico y antioxidantes, que trabajan juntos para hidratar la piel, reducir arrugas y líneas de expresión, y promover la renovación celular mientras duermes',
-});
-
-productList.push({
-    name: 'Sérum rejuvenecedor nocturno',
-    price: 220,
-    image: 'https://media.istockphoto.com/id/1296705483/es/foto/elabora-productos-basados-en-podios-blancos-sobre-fondo-rosa-en-pastel.jpg?s=2048x2048&w=is&k=20&c=QLk-QdKfqaxqt1FXKiiKMhD3wSjMDvk1ijQCBWTG6Do=',
-    description: 'Este lápiz labial está formulado para brindar un color intenso y de larga duración. Su fórmula de larga duración es resistente a transferencias y borrones, lo que significa que puedes disfrutar de un labial vibrante durante horas sin necesidad de retoques constantes. Disponible en una amplia gama de tonos para adaptarse a todos los estilos y ocasiones',
-});
-
-productList.push({
-    name: 'Lay plana de suero',
-    price: 320,
-    image: 'https://media.istockphoto.com/id/1336084356/es/foto/lay-plana-de-suero-de-cosm%C3%A9ticos-y-cristaler%C3%ADa-de-laboratorio-con-hojas-frescas-de-aloe-vera.jpg?s=1024x1024&w=is&k=20&c=R9wSK1MeekVFSaQuLRNdG3pvgxcKgG1Uo-LDGWm2aAM=',
-    description: 'Lay plana de suero de cosméticos y cristalería de laboratorio con hojas frescas de aloe vera sobre fondo verde brillante.',
-});
 
 
 function showProducts(arr) {
@@ -118,9 +95,12 @@ function showProducts(arr) {
         productCard.classList.add('product-card');
     
         const productImg = document.createElement('img');
-        productImg.setAttribute('src', product.image);
+        productImg.setAttribute('src', product.urlImg);
         productImg.dataset.productName = product.name; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen
-        productImg.addEventListener('click', openProductDetailAside);
+        //productImg.addEventListener('click', openProductDetailAside);
+        productImg.addEventListener('click', () => {
+            openProductDetailAside(product.name, product.urlImg, product.price, product.description);
+        });
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
@@ -154,11 +134,12 @@ function showProducts(arr) {
     }
 }
 
-function openProductDetailAside(event) {
+function openProductDetailAside(name, urlImg, price, description) {
 
-    const productName = event.currentTarget.dataset.productName;
+    const productName = name;
+    alert(productName)
 
-    createProductDetailContainer(productName);
+    createProductDetailContainer(name, urlImg, price, description);
     shoppingCartContainer.classList.add('inactive')
     productDetailContainer.classList.remove('inactive');
     ClosedDesktopMenu();
@@ -178,7 +159,7 @@ function ClosedDesktopMenu() {
 
 
 
-function createProductDetailContainer(productName) {
+function createProductDetailContainer(name,urlImg,price, description) {
     
     productDetailContainer.innerHTML = ""
 
@@ -193,13 +174,13 @@ function createProductDetailContainer(productName) {
     productDetailClose.addEventListener('click', closeProductDetailAside)
 
     const imgProduct = document.createElement('img');
-    for (const product of productList) {
+    /* for (const product of productList) {
         if (product.name === productName ) {
             productDetailMax = product;
         }
-    }
-    imgProduct.setAttribute('src', productDetailMax.image);
-    imgProduct.setAttribute('alt', productDetailMax.name)
+    } */
+    imgProduct.setAttribute('src', urlImg);
+    imgProduct.setAttribute('alt', name)
 
 
     productDetailContainer.appendChild(productDetailClose);    
@@ -208,11 +189,11 @@ function createProductDetailContainer(productName) {
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
     const productPriceDatail = document.createElement('p');
-    productPriceDatail.innerText = '$' + productDetailMax.price;
+    productPriceDatail.innerText = '$' + price;
     const productNameDetail = document.createElement('p');
-    productNameDetail.innerText = productDetailMax.name;
+    productNameDetail.innerText = name;
     const productDescriptionDetail = document.createElement('p');
-    productDescriptionDetail.innerText = productDetailMax.description;
+    productDescriptionDetail.innerText = description;
     productInfo.appendChild(productPriceDatail);
     productInfo.appendChild(productNameDetail);
     productInfo.appendChild(productDescriptionDetail);
@@ -231,7 +212,7 @@ function createProductDetailContainer(productName) {
     productDetailContainer.appendChild(buttonBuytoCart);
 
 
-    buttonBuytoCart.dataset.productName = productName; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen, esto lo utilizaceremos para el addToCart
+    buttonBuytoCart.dataset.productName = name; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen, esto lo utilizaceremos para el addToCart
     buttonBuytoCart.addEventListener('click' , addToCart);
 }
 
@@ -302,7 +283,7 @@ function showProductListCart() {
         shoppingCart.appendChild(figure);
 
         const img = document.createElement('img');
-        img.setAttribute('src', product.image);
+        img.setAttribute('src', product.urlImg);
         figure.appendChild(img);
 
         const nameProductCart = document.createElement('p');
@@ -341,5 +322,28 @@ function calculateCartTotal() {
     return(total);
 }
 
-showProducts(productList);
+
+
+
+
+async function fetchProducts() {
+    try {
+        const response = await fetch('/products');
+        if (!response.ok) {
+            throw new Error('Error al obtener los productos');
+        }
+        const productListString = await response.text();
+        //displayProducts(productListString);
+        const productList = JSON.parse(productListString);
+        console.log(productList)
+        showProducts(productList);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchProducts();
+
+
 

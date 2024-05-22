@@ -3,6 +3,7 @@ const puerto = 3000;
 const { default: mongoose } = require('mongoose');
 const app =  express();
 const User = require('./models/user')
+const Product = require('./models/product')
 //const Contacto = require('./models/contacto')
 
 app.use(express.static('public'))
@@ -96,6 +97,45 @@ app.post('/change-password', async (req, res) => {
     }
 });
 
+
+app.post('/product/new', async (req, res) => {
+    try {
+        const { urlImg, priceProductNew, nameProductNew, stockProductNew, descriptionProductNew } = req.body;
+
+        // Imprimir valores en la consola
+        console.log('URL de la imagen:', urlImg);
+        console.log('Precio:', priceProductNew);
+        console.log('Nombre:', nameProductNew);
+        console.log('Cantidad:', stockProductNew);
+        console.log('Descripción:', descriptionProductNew);
+
+        const newProduct = new Product({
+            urlImg,
+            price: priceProductNew,
+            name: nameProductNew,
+            stock: stockProductNew,
+            description: descriptionProductNew
+        });
+        
+        const savedProduct = await newProduct.save();
+        res.redirect('/components/newproduct.html'); // Redirigir a una página de éxito después de guardar
+    } catch (error) {
+        console.error('Error al crear un nuevo producto: ', error);
+        res.status(500).json({ message: 'Error al crear un nuevo producto', error: error.message });
+    }
+});
+
+
+// Ruta para consultar todos los productos
+app.get('/products', async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.send(products);
+    } catch (error) {
+        console.error('Error al obtener los productos: ', error);
+        res.status(500).json({ message: 'Error al obtener los productos', error: error.message });
+    }
+});
 
 app.listen(puerto,() =>{
     console.log(`escuchando en http://localhost:${puerto}`)

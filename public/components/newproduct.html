@@ -85,25 +85,28 @@
     </div>
   </nav>
 
-  <div id="productDetail" class="newProductContainer">
-    <p class="product-info-new-title">CREAR PRODUCTO</p>
-    <div class="product-info">
-        <label for="urlImg" class="labelUrlProduct">URL de la imagen</label>
-        <input type="url" id="urlImg" name="urlImg" required="true" class="input">
-        
-        <label for="priceProductNew">Precio</label>
-        <input type="number" id="priceProductNew" name="priceProductNew" required="true" class="input">
-
-        <label for="nameProductNew">Nombre</label>
-        <input type="text" id="nameProductNew" name="nameProductNew" required="true" class="input">
-        
-        <label for="stockProductNew">Cantidad</label>
-        <input type="number" id="stockProductNew" name="stockProductNew" required="true" class="input">
-
-        <label for="descriptionProductNew">Descripción</label>
-        <textarea id="descriptionProductNew" name="descriptionProductNew" required="true" class="textarea"></textarea>
-    </div>
-    <button class="primary-button">Guardar</button>
+  <form action="/product/new" method="post">
+    <div id="productDetail" class="newProductContainer">
+      <p class="product-info-new-title">CREAR PRODUCTO</p>
+      <div class="product-info">
+          <label for="urlImg" class="labelUrlProduct">URL de la imagen</label>
+          <input type="url" id="urlImg" name="urlImg" required="true" class="input">
+          
+          <label for="priceProductNew">Precio</label>
+          <input type="number" id="priceProductNew" name="priceProductNew" required="true" class="input">
+  
+          <label for="nameProductNew">Nombre</label>
+          <input type="text" id="nameProductNew" name="nameProductNew" required="true" class="input">
+          
+          <label for="stockProductNew">Cantidad</label>
+          <input type="number" id="stockProductNew" name="stockProductNew" required="true" class="input">
+  
+          <label for="descriptionProductNew">Descripción</label>
+          <textarea id="descriptionProductNew" name="descriptionProductNew" required="true" class="textarea"></textarea>
+      </div>
+      <button class="primary-button">Guardar</button>
+  </form>
+    
 </div>
 
 

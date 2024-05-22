@@ -51,7 +51,7 @@ function showProducts(arr) {
         productCard.classList.add('product-card');
     
         const productImg = document.createElement('img');
-        productImg.setAttribute('src', product.image);
+        productImg.setAttribute('src', product.urlImg);
         productImg.dataset.productName = product.name; // Aquí almacenamos el nombre del producto como un atributo de datos en el elemento de imagen
         //productImg.addEventListener('click', openProductDetailAside);
     
@@ -171,7 +171,7 @@ function createProductEditorContainer(productName) {
     imgUrlProduct.setAttribute("name", "urlImg");
     imgUrlProduct.setAttribute("required", "true");
     imgUrlProduct.classList.add("input");
-    imgUrlProduct.value = foundProductDetail.image;
+    imgUrlProduct.value = foundProductDetail.urlImg;
 
 
     //label del input del precio
@@ -266,6 +266,36 @@ function createProductEditorContainer(productName) {
 
 //Fin de funciones para crear el editor de productos
 
+// public/scripts/fetchProducts.js
 
-showProducts(productList);
+document.addEventListener('DOMContentLoaded', () => {
+    fetchProducts();
+});
+
+async function fetchProducts() {
+    try {
+        const response = await fetch('/products');
+        if (!response.ok) {
+            throw new Error('Error al obtener los productos');
+        }
+        const productListString = await response.text();
+        //displayProducts(productListString);
+        const productsArray = JSON.parse(productListString);
+        console.log(productsArray)
+        showProducts(productsArray);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+/* function displayProducts(productListString) {
+    const productsContainer = document.getElementById('productsContainer');
+    productsContainer.innerHTML = `<pre>${productListString}</pre>`;
+} */
+
+
+
+
+//showProducts(productList);
 
