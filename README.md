@@ -6,7 +6,8 @@
 - Santiago Reyes - Desarrollador 
 
 # Viuri
-![Logo](./images/logo_viuri_morado.svg){:width="100px" height="100px"}
+<img src="./images/logo_viuri_morado.svg" alt="Logo" width="100" height="100">
+
 ## _Empresa especializada en la venta de productos de belleza femenina, Online_
 
 ### Repositorio en GitHub:
