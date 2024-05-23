@@ -11,6 +11,10 @@
     --md: 16px;
     --lg: 18px;
   }
+
+  .main-container{
+    margin: 160px 14px;
+  }
   body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
@@ -599,3 +603,66 @@
         display: none;
     }
   }
+/* Estilos para el footer */
+footer {
+  background-color: var(--violet); /* Usando variable de color */
+  color: var(--white); /* Texto en color blanco */
+  padding: 40px 0; /* Espaciado interno */
+  font-size: var(--sm); /* Tamaño de fuente */
+}
+
+.footer-container {
+  max-width: 1200px; /* Ancho máximo del footer */
+  margin: 0 auto; /* Centrado horizontal */
+  display: flex; /* Flexbox para distribuir los elementos */
+  justify-content: space-between; /* Distribución uniforme de los elementos */
+  align-items: flex-start; /* Alineación vertical al principio */
+}
+
+.footer-section {
+  flex: 1; /* Crecimiento flexible de las secciones */
+  margin-right: 20px; /* Espaciado entre secciones */
+}
+
+.footer-section h3 {
+  font-size: var(--md); /* Tamaño de fuente para los títulos */
+}
+
+.footer-section p {
+  margin-bottom: 10px; /* Espaciado entre párrafos */
+}
+
+.footer-section ul {
+  list-style: none; /* Eliminar viñetas de la lista */
+  padding: 0; /* Eliminar relleno de la lista */
+}
+
+.footer-section ul li {
+  margin-bottom: 8px; /* Espaciado entre elementos de la lista */
+}
+
+.footer-section ul li a {
+  color: var(--white); /* Color de enlace */
+  text-decoration: none; /* Eliminar subrayado de enlace */
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.social-media-icons {
+  display: flex; /* Flexbox para iconos de redes sociales */
+}
+
+.social-media-icons li {
+  margin-right: 10px; /* Espaciado entre iconos */
+}
+
+.social-media-icons li:last-child {
+  margin-right: 0; /* Eliminar margen derecho del último icono */
+}
+
+.social-media-icons li a img {
+  width: 30px; /* Tamaño de los iconos de redes sociales */
+  height: 30px;
+}
